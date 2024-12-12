@@ -1,5 +1,7 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.27)
 project(Starter C CXX)
+
+set(CMAKE_CXX_STANDARD 23)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "") # works (in creating the compile_commands.json file)
 
@@ -48,8 +50,10 @@ endif(MSVC)
 # Libraries linking
 find_package(glfw3 REQUIRED)
 find_package(imguidocking REQUIRED)
+find_package(PostgreSQL REQUIRED)
 
 target_link_libraries(${PROJECT_NAME}
     glfw
     imguidocking::imguidocking
+    PostgreSQL::PostgreSQL
 )

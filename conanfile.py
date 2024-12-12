@@ -17,6 +17,7 @@ class StarterConanRecipe(ConanFile):
         # self.requires("shaderc/2024.1")
         self.requires("glfw/3.4")
         self.requires("imguidocking/1.0")
+        self.requires("libpq/15.5")
 
     def build(self):
         cmake = CMake(self)
